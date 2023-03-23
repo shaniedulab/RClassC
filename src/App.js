@@ -1,24 +1,19 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import Demo from './Components/Demo';
+import DemoContext from './DemoContext';
+import ErrorBoundry from './Components/ErrorBoundry';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <DemoContext.Provider value={{value:"this is demoContext"}}>
+      <div className="App">
+      <ErrorBoundry>
+        <Demo name="shani">thiskprops</Demo>
+      </ErrorBoundry>
+      </div>
+    </DemoContext.Provider>
   );
 }
 
